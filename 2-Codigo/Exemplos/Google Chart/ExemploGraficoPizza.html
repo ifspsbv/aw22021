@@ -1,0 +1,45 @@
+<html>
+  <head>    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div> 
+
+    <script type="text/javascript">
+
+      google.charts.load('current' , {'packages': ['corechart']});
+      google.charts.setOnLoadCallback( drawChart );
+
+
+      function drawChart(){
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Resposta');
+        data.addColumn('number', 'Número');
+        
+        data.addRows(
+            [
+                ['Sim' , 78  ],
+                ['Sim em vermelho' , 178 ]
+            ]            
+        );
+
+        var options = {'title':'Você gosta do Boteco Digital?',
+                       'width':500,
+                       'height':350,
+                       colors: ['#3366CC', '#DC3912']
+                       };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);        
+
+
+      }
+    </script>
+  </body>
+
+
+</html>
