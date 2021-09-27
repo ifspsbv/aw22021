@@ -1,0 +1,44 @@
+<html>
+  <head>    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div> 
+
+    <script type="text/javascript">
+
+      google.charts.load('current' , {'packages': ['corechart']});
+      google.charts.setOnLoadCallback( drawChart );
+
+
+      function drawChart(){
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Ano');
+          data.addColumn('number', 'Despesas');
+          data.addColumn('number', 'Receitas');
+          
+          data.addRows(
+              [
+                  ['2016' , 1000 , 470 ],
+                  ['2017' , 1170 , 560 ],
+                  ['2018' , 690 , 1120 ],
+                  ['2019' , 780 , 630 ],
+              ]            
+          );
+
+          var options = {'title':'Fluxo',
+                         'width':500,
+                         'height':350
+                         };
+
+          var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+      }
+    </script>
+  </body>
+
+
+</html>
