@@ -22,11 +22,11 @@ $dados = $dao->listarTransacaoTodos();
                 <legend>Transação</legend>
                 <label for="nome" class="">Nome:</label>
                  
-                <input name="nome" id="nome" class="padrao" placeholder="Dê um nome para sua Transação (obrigatório)" type="text" required>
+                <input name="nome" id="nome" class="padrao" placeholder="Dê um nome para sua Transação (obrigatório)" type="text" maxlength="50" required>
                  
                 <label for="descricao">Descrição:</label>
                  
-                <textarea name="descricao" id="descricao" class="padrao" placeholder="Descrição (opicional)"></textarea>
+                <textarea name="descricao" id="descricao" class="padrao" maxlength="250" placeholder="Descrição (opicional)"></textarea>
                  
                 <label for="valor" class="">Valor:</label>
                  

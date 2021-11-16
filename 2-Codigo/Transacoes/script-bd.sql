@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `transacoes` (
   `trs_id` int(11) NOT NULL AUTO_INCREMENT,
   `trs_nome` varchar(50) NOT NULL,
-  `trs_descricao` varchar(250) NULL,
+  `trs_descricao` varchar(252) NULL,
   `trs_valor` decimal(10,2) NOT NULL,
   `trs_cod` varchar(1) not null,
   PRIMARY KEY (`trs_id`)

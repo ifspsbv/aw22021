@@ -32,11 +32,11 @@ $cod       = $dados['trs_cod'];
                 <legend>Transação</legend>
                 <label for="nome" class="">Nome:</label>
                  
-                <input name="nome" id="nome" class="padrao" value="<?php echo $nome;?>" type="text" required>
+                <input name="nome" id="nome" class="padrao" value="<?php echo $nome;?>" type="text" maxlength="50" required>
                  
                 <label for="descricao">Descrição:</label>
                  
-                <textarea name="descricao" id="descricao" class="padrao"><?php echo $descricao;?></textarea>
+                <textarea name="descricao" id="descricao" maxlength="250" class="padrao"><?php echo $descricao;?></textarea>
                  
                 <label for="valor" class="">Valor:</label>
                  
