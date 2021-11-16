@@ -44,9 +44,9 @@ $cod       = $dados['trs_cod'];
                  
                 <fieldset>
                     <legend>Tipo de Valor(Cod)</legend>
-                    <label for="cod" ><input type="radio" name="cod" value="Depósito" id="cod" <?php if($cod =='Depósito'){ echo "checked";} ?>>Depósito</label>
+                    <label for="cod" ><input type="radio" name="cod" value="D" id="cod" <?php if($cod =='D'){ echo "checked";} ?>>Depósito</label>
                     <br>
-                    <label for="cod"><input type="radio" name="cod" value="Saque" id="cod" <?php if($cod =='Saque'){ echo "checked";} ?>>Saque</label>
+                    <label for="cod"><input type="radio" name="cod" value="S" id="cod" <?php if($cod =='S'){ echo "checked";} ?>>Saque</label>
                 </fieldset>
                  
                 <input type="hidden" name="id" value="<?php echo $id;?>"/>

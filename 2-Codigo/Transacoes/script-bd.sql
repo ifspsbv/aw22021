@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 --
 CREATE TABLE `transacoes` (
   `trs_id` int(11) NOT NULL AUTO_INCREMENT,
-  `trs_nome` varchar(100) NOT NULL,
-  `trs_descricao` text NULL,
-  `trs_valor` decimal(12,2) NOT NULL,
-  `trs_cod` text(20) not null,
+  `trs_nome` varchar(50) NOT NULL,
+  `trs_descricao` varchar(250) NULL,
+  `trs_valor` decimal(10,2) NOT NULL,
+  `trs_cod` varchar(1) not null,
   PRIMARY KEY (`trs_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

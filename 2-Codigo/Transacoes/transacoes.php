@@ -34,9 +34,9 @@ $dados = $dao->listarTransacaoTodos();
                  
                 <fieldset>
                     <legend>Tipo de Valor(Cod)</legend>
-                    <label for="cod" ><input type="radio" name="cod" value="Depósito" id="cod">Depósito</label>
+                    <label for="cod" ><input type="radio" name="cod" value="D" id="cod">Depósito</label>
                     <br>
-                    <label for="cod"><input type="radio" name="cod" value="Saque" id="cod">Saque</label>
+                    <label for="cod"><input type="radio" name="cod" value="S" id="cod">Saque</label>
                 </fieldset>
                  
                 <button type="submit" class="enviar">Cadastrar</button>
