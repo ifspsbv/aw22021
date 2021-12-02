@@ -1,9 +1,7 @@
 <?php
-    // echo "aaaaaa";
     include "conexao.php";
 
     $id = $_POST['id'];
-    echo $id;
 
     $sql = "DELETE FROM carteira WHERE ctr_id=$id ";
 

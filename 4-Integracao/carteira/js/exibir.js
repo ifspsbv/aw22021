@@ -32,11 +32,9 @@ const carregarCarteira = () =>{
                       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                           <tr>
-                            <th>Id</th>
                             <th>Nome da carteira</th>
-                            <th>Descrição Carteira</th>
-                            <th>Data</th>
-                            <th>Vizualizar</th>
+                            <th>Descrição da carteira</th>
+                            <th>Visualizar</th>
                             <th>Excluir</th>
                           </tr>
                         </thead>
@@ -46,10 +44,8 @@ const carregarCarteira = () =>{
                         for(let i=0;i<data.length;i++){
                           tabela +=`
                           <tr>
-                            <td>${data[i].ctr_id}</td>
                             <td>${data[i].ctr_nome}</td>
                             <td>${data[i].ctr_desc}</td>
-                            <td>${data[i].ctr_data}</td>
                             <td class="text-center">
                             <button class="btn btn-info btn-circle" data-toggle="modal" data-target="#modal" 
                             onclick="MontaModal(${JSON.stringify(data[i]).split('"').join("&quot;")})">
@@ -90,13 +86,12 @@ const carregarCarteira = () =>{
     })
 }
 const MontaModal = (data) =>{
-    // console.log(data)
     let modal = `
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Carteira</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form>
@@ -107,15 +102,11 @@ const MontaModal = (data) =>{
             <div class="mb-3">
               <label for="message-text" class="col-form-label">Descrição:</label>
               <input type="text" class="form-control" id="alteracaoDescricao" value="${data.ctr_desc}">
-            </div>
-            <div class="mb-3">
-                <label for="message-text" class="col-form-label">Descrição:</label>
-                <input type="text" class="form-control" id="alteracaoData" value="${data.ctr_data}">
-          </div>
+            </div>            
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
           <button type="button" onclick="salvarCarteira(${data.ctr_id})" class="btn btn-success">Salvar</button>
         </div>
       </div>
@@ -127,10 +118,6 @@ const MontaModal = (data) =>{
 const salvarCarteira = (id) =>{
     let alteracaoCarteira = $("#alteracaoCarteira").val()
     let alteracaoDescricao = $("#alteracaoDescricao").val()
-    let alteracaoData = $("#alteracaoData").val()
-
-    // alert(alteracaoCarteira)
-    // alert(alteracaoDescricao)
 
     if(alteracaoCarteira == ""){
         alert("Preecha o campo carteira!")
@@ -140,23 +127,21 @@ const salvarCarteira = (id) =>{
         alert("Preencha o campo descrição!")
         return
     }
-    if(alteracaoData == ""){
-        alert("Preencha o campo data!")
-        return
-    }
+
     fetch(`backend/alteracaocarteira.php`, {
         credentials: 'same-origin',
         method: 'POST',
-        body: `id=${id}&alteracaoCarteira=${alteracaoCarteira}&alteracaoDescricao=${alteracaoDescricao}&alteracaoData=${alteracaoData}`,
+        body: `id=${id}&alteracaoCarteira=${alteracaoCarteira}&alteracaoDescricao=${alteracaoDescricao}`,
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
         }
       }).then(function (response) {
         response.json().then(data => {
           if(data.RETORNO == "SUCESSO"){
-            alert('Sucesso ao salvar')
+            alert('Sucesso ao salvar!')
+            document.location.reload(true)
           }else{
-            alert('Erro ao salvar')
+            alert('Erro ao salvar!')
           }
         })
         }).catch(function (error) {
@@ -166,9 +151,8 @@ const salvarCarteira = (id) =>{
       })
 }
 const DeletarCarteira = (data) =>{
-    // alert("olá")
     let id = data.ctr_id
-    // alert (id)
+
     fetch(`backend/deletarcarteira.php`, {
         credentials: 'same-origin',
         method: 'POST',
@@ -179,9 +163,10 @@ const DeletarCarteira = (data) =>{
     }).then(function (response) {
         response.json().then(data => {
             if(data.RETORNO == "SUCESSO"){
-                alert("Sucesso ao deletar")
+                alert("Sucesso ao excluir!")
+                document.location.reload(true)
             }else{
-                alert("Erro ao deletar")
+                alert("Erro ao excluir!")
             }
     
         })

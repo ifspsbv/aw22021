@@ -1,5 +1,4 @@
 <?php
-    // echo "teste";
     include 'conexao.php';
 
     $sql = "SELECT * FROM carteira";

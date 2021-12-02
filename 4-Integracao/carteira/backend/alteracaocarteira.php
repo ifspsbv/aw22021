@@ -1,17 +1,11 @@
 <?php
-    // echo "big day";
     include "conexao.php";
+    
     $id = $_POST['id'];
     $alteracaoCarteira = $_POST['alteracaoCarteira'];
     $alteracaoDescricao = $_POST['alteracaoDescricao'];
-    $alteracaoData = $_POST['alteracaoData'];
-    echo $id;
-    echo $alteracaoCarteira;
-    echo $alteracaoDescricao;
-    echo $alteracaoData;
 
-
-    $sql = "UPDATE carteira SET ctr_nome='$alteracaoCarteira', ctr_desc='$alteracaoDescricao', ctr_data='$alteracaoData' WHERE ctr_id=$id";
+    $sql = "UPDATE carteira SET ctr_nome='$alteracaoCarteira', ctr_desc='$alteracaoDescricao' WHERE ctr_id=$id";
 
     $comando = $conexao->prepare($sql);
     $conexao->beginTransaction();

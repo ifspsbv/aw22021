@@ -24,13 +24,9 @@ $( document ).ready(function() {
 });
 
 const CadastrarCarteira = () =>{
-    // alert("teste")
     let nome = $("#nome").val()
-    // alert(nome)
     let descricao = $("#descricao").val()
-    // alert(descricao)
-    let data = $("#data").val()
-    // alert(data)
+    
     if(nome == ""){
         alert("Preencha o campo nome!")
         return
@@ -39,15 +35,11 @@ const CadastrarCarteira = () =>{
         alert("Preencha o campo descrição!")
         return
     }
-    if(data == ""){
-        alert("Preencha o campo data!")
-        return
-    }
 
     fetch(`backend/cadastrarcarteira.php`, {
         credentials: 'same-origin',
         method: 'POST',
-        body: `nome=${nome}&descricao=${descricao}&data=${data}`,
+        body: `nome=${nome}&descricao=${descricao}`,
         headers: {
             'Content-type': 'application/x-www-form-urlencoded'
         }

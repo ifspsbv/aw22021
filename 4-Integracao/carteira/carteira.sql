@@ -30,16 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `carteira` (
   `ctr_id` int(11) NOT NULL,
   `ctr_nome` varchar(100) NOT NULL,
-  `ctr_desc` varchar(100) NOT NULL,
-  `ctr_data` date NOT NULL
+  `ctr_desc` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `carteira`
 --
 
-INSERT INTO `carteira` (`ctr_id`, `ctr_nome`, `ctr_desc`, `ctr_data`) VALUES
-(9, 'Informática', '12312', '2021-11-10');
+INSERT INTO `carteira` (`ctr_id`, `ctr_nome`, `ctr_desc`) VALUES
+(9, 'Informática', '12312');
 
 --
 -- Índices para tabelas despejadas
