@@ -12,7 +12,7 @@
     $comando->execute();
     $conexao->commit();
 
-    $retorno = array("RETORNO"=>"SUCESSO","MENSAGEM"=>"DESCRIÇÃO ALTERADA!");
+    $retorno = array("RETORNO"=>"SUCESSO","MENSAGEM"=>"Dado(s) alterado(s) com sucesso!");
 
     $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
 

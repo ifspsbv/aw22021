@@ -51,14 +51,10 @@ const CadastrarCarteira = () =>{
                 $("#form-carteira")[0].reset()
             }else{
                 alert("Erro ao inserir")
-            }
-     
-    
-    
+            }        
         })
     }).catch(function (error) {
         alert("Erro ao conectar")
     
     })
 }
-

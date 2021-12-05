@@ -145,9 +145,7 @@ const salvarCarteira = (id) =>{
           }
         })
         }).catch(function (error) {
-          SwalFire("error","Erro!","Sistema indisponível, tente novamente mais tarde!")
-     
-    
+          SwalFire("error","Erro!","Sistema indisponível, tente novamente mais tarde!")    
       })
 }
 const DeletarCarteira = (data) =>{

@@ -10,7 +10,7 @@
     $comando->execute();
     $conexao->commit();
 
-    $retorno = array("RETORNO"=>"SUCESSO","MENSAGEM"=>"CARTEIRA DELETADA!");
+    $retorno = array("RETORNO"=>"SUCESSO","MENSAGEM"=>"Carteira excluída com sucesso!");
 
     $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
 
