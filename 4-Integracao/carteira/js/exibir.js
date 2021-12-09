@@ -25,7 +25,7 @@ const carregarCarteira = () =>{
                 let tabela = `
                 <div class="card shadow mb-4">
                   <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Carregamento da carteira</h6>
+                    <h6 class="m-0 font-weight-bold text-success">Carregamento da carteira</h6>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -120,57 +120,108 @@ const salvarCarteira = (id) =>{
     let alteracaoDescricao = $("#alteracaoDescricao").val()
 
     if(alteracaoCarteira == ""){
-        alert("Preecha o campo carteira!")
-        return
+      Swal.fire({
+          icon: 'warning',
+          title: 'Atenção!',
+          text: 'Campo "Nome" obrigatório!',
+      })
+      return
     }
     if(alteracaoDescricao == ""){
-        alert("Preencha o campo descrição!")
-        return
+      Swal.fire({
+        icon: 'warning',
+        title: 'Atenção!',
+        text: 'Campo "Descrição" obrigatório!',
+      })
+      return
     }
 
-    fetch(`backend/alteracaocarteira.php`, {
-        credentials: 'same-origin',
-        method: 'POST',
-        body: `id=${id}&alteracaoCarteira=${alteracaoCarteira}&alteracaoDescricao=${alteracaoDescricao}`,
-        headers: {
-            'Content-type': 'application/x-www-form-urlencoded'
-        }
-      }).then(function (response) {
-        response.json().then(data => {
-          if(data.RETORNO == "SUCESSO"){
-            alert('Sucesso ao salvar!')
-            document.location.reload(true)
-          }else{
-            alert('Erro ao salvar!')
+    Swal.fire({
+      title: 'Realmente deseja salvar as (supostas) mudanças?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Salvar',
+      denyButtonText: `Não salvar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`backend/alteracaocarteira.php`, {
+          credentials: 'same-origin',
+          method: 'POST',
+          body: `id=${id}&alteracaoCarteira=${alteracaoCarteira}&alteracaoDescricao=${alteracaoDescricao}`,
+          headers: {
+              'Content-type': 'application/x-www-form-urlencoded'
           }
+        }).then(function (response) {
+          response.json().then(data => {
+            if(data.RETORNO == "SUCESSO"){
+              Swal.fire({
+                icon: 'success',
+                title: "Sucesso ao salvar!",
+                text: "Carteira alterada com sucesso!"
+                }).then(function(){
+                    window.location.href = "carteira.html"
+              })
+            }else{
+              Swal.fire({
+                icon: 'error',
+                title: "Erro ao salvar!",
+                text: "Carteira não foi alterada!"
+                }).then(function(){
+                    window.location.href = "carteira.html"
+              })
+            }
+          })
+          }).catch(function (error) {
+            SwalFire("error","Erro!","Sistema indisponível, tente novamente mais tarde!")    
         })
-        }).catch(function (error) {
-          SwalFire("error","Erro!","Sistema indisponível, tente novamente mais tarde!")    
-      })
-}
+      } else if (result.isDenied) {
+      }
+    })    
+  }
 const DeletarCarteira = (data) =>{
     let id = data.ctr_id
 
-    fetch(`backend/deletarcarteira.php`, {
-        credentials: 'same-origin',
-        method: 'POST',
-        body: `id=${id}`,
-        headers: {
-            'Content-type': 'application/x-www-form-urlencoded'
-        }
-    }).then(function (response) {
-        response.json().then(data => {
-            if(data.RETORNO == "SUCESSO"){
-                alert("Sucesso ao excluir!")
-                document.location.reload(true)
-            }else{
-                alert("Erro ao excluir!")
-            }
-    
-        })
-    }).catch(function (error) {
-        SwalFire("error","Atenção","Sistema indisponivel no momento!")
-     
-    
-    })
+    Swal.fire({
+      title: 'Tem certeza ? (todos os dados referentes a carteira serão apagados).',
+      text: "Essa ação não poderá ser revertida!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, excluir'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`backend/deletarcarteira.php`, {
+          credentials: 'same-origin',
+          method: 'POST',
+          body: `id=${id}`,
+          headers: {
+              'Content-type': 'application/x-www-form-urlencoded'
+          }
+      }).then(function (response) {
+          response.json().then(data => {
+              if(data.RETORNO == "SUCESSO"){
+                Swal.fire({
+                  icon: 'success',
+                  title: "Sucesso ao excluir!",
+                  text: "Carteira excluída com sucesso!"
+                  }).then(function(){
+                      window.location.href = "carteira.html"
+                })
+              }else{
+                Swal.fire({
+                  icon: 'error',
+                  title: "Erro ao excluir!",
+                  text: "Carteira não foi excluída!"
+                  }).then(function(){
+                      window.location.href = "carteira.html"
+                })
+              }    
+          })
+      }).catch(function (error) {
+          SwalFire("error","Atenção","Sistema indisponivel no momento!")    
+      })
+      }
+    })    
 }

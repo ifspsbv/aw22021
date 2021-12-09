@@ -9,7 +9,7 @@
         $dados = $resultado->fetchAll();
         $json = json_encode($dados);
     }else{
-        $retorno = array("RETORNO" => "ERRO","MENSAGEM" =>"REGISTROS NÃO ENCONTRADOS!");
+        $retorno = array("RETORNO" => "ERRO","MENSAGEM" =>"Erro na busca por registros!");
         $json = json_encode($retorno);
     }
     echo $json;

@@ -9,17 +9,21 @@ $( document ).ready(function() {
         }).then(function (response) {
             response.json().then(data => {
                 if(data.RETORNO == "ERRO"){
-
+                    
                 }else{
                     $("#botao").attr('disabled',true)
-                }
-            
-        
-        
+                    $("#nome").attr('disabled',true)
+                    $("#descricao").attr('disabled',true)
+                }        
             })
         }).catch(function (error) {
-            alert("Erro ao conectar")
-        
+            Swal.fire({
+                icon: 'error',
+                title: "Erro ao conectar",
+                text: "Falha na conexão"
+                }).then(function(){
+                    window.location.href = "index.html"
+            })
         })
 });
 
@@ -28,11 +32,19 @@ const CadastrarCarteira = () =>{
     let descricao = $("#descricao").val()
     
     if(nome == ""){
-        alert("Preencha o campo nome!")
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção!',
+            text: 'Campo "Nome" obrigatório!',
+        })
         return
     }
     if(descricao == ""){
-        alert("Preencha o campo descrição!")
+        Swal.fire({
+            icon: 'warning',
+            title: 'Atenção!',
+            text: 'Campo "Descrição" obrigatório!',
+        })
         return
     }
 
@@ -46,15 +58,31 @@ const CadastrarCarteira = () =>{
     }).then(function (response) {
         response.json().then(data => {
             if(data.RETORNO == "SUCESSO"){
-                alert(data.MENSAGEM)
-                document.location.reload(true)
+                Swal.fire({
+                    icon: 'success',
+                    title: "Sucesso ao cadastrar!",
+                    text: data.MENSAGEM
+                    }).then(function(){
+                        window.location.href = "index.html"
+                })                
                 $("#form-carteira")[0].reset()
             }else{
-                alert("Erro ao inserir")
+                Swal.fire({
+                    icon: 'error',
+                    title: "Erro ao cadastrar!",
+                    text: "Carteira não foi cadastrada!"
+                    }).then(function(){
+                        window.location.href = "index.html"
+                })              
             }        
         })
     }).catch(function (error) {
-        alert("Erro ao conectar")
-    
+        Swal.fire({
+            icon: 'error',
+            title: "Erro ao conectar",
+            text: "Falha na conexão"
+            }).then(function(){
+                window.location.href = "index.html"
+        })
     })
 }
