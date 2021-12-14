@@ -37,13 +37,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
 
-
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown no-arrow">
+                        <li class="dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#">
-                                <img class="img-profile rounded-circle"
+                                <img style="width: 60%;" class="img-fluid"
                                      src="../public/img/logo2.svg">
-                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">DNHR</span>
                             </a>                            
                         </li>
                     </ul>
@@ -54,7 +52,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Funcionalidades -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1 ">
                             <a class="nav-link dropdown-toggle" href="#funcionalidades">
                                 <span class="mr-2 d-none d-lg-inline text-gray-900 small">Funcionalidades</span>
                             </a>
@@ -66,10 +64,16 @@
                                 <span class="mr-2 d-none d-lg-inline text-gray-900 small">Sobre Nós</span>
                             </a>
                         </li>
+                        <!-- Nav Item - Dúvidas Frequentes -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#duvidas" ><!--link do "Dúvidas Frequentes"-->
+                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">Dúvidas Frequentes</span>
+                            </a>
+                        </li>
 
                         <!-- Nav Item - Iniciar Sessão -->
                         <li class="nav-item dropdown no-arrow mx-1  <?php //if(usuario==logado) { echo"invisible";} ?>">
-                            <a class="nav-link dropdown-toggle" href="#"><!--link do cadastro-->
+                            <a class="nav-link dropdown-toggle" href="#" ><!--link do cadastro-->
                                 <span class="mr-2 d-none d-lg-inline text-gray-900 small">Iniciar Sessão</span>
                             </a>
                         </li>
@@ -85,17 +89,128 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div style="width: 90%" class="container-fluid text-gray-900">
+                    <div class="card shadow mb-4">
+                        <!--Começo Bem-Vindo -->
+                        <div class="card-header py-3">
+                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Bem-Vindo ao DNHR!</h6>
+                        </div>
+                        <div class="card-body text-lg">
+                            <p> Bem-vindo ao nosso sistema de controle financeiro! Nosso site foi construído
+                                com o objetivo de ajuda-lo a registrar e planejar suas finanças de maneira dinâmica e
+                                sofisticada. Tudo para que você tenha uma experiência muito melhor na hora
+                                de navegar pelo site da DNHR.</p>
 
-                    <h1 class="h3 mb-4 text-gray-800 text-center">Bem Vindo Ao DNHR!</h1>
-                    <p>*texto de boas vindas*</p>
-                    <h1 id="funcionalidades" class="h3 mb-4 text-gray-800 text-center">Funcionalidades</h1>
-                    <p>*Breve tutorial sobre o site*</p>
-                    <h1 id="sobre" class="h3 mb-4 text-gray-800 text-center">Sobre Nós</h1>
-                    <p>*texto sobre nós*</p>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800 text-center">
+                            <p class="mb-0"> A nossa ideia é  oferecer um site com um design criado
+                                com <span class="text-success font-weight-bold"> design agradável,eficiente,
+                                    moderno</span> e, possibilitando uma incrível experiência
+                                para o <span class="text-success font-weight-bold">usuário.</span></p>
+                        </div>
+                    </div>
+                    <!--Fim Bem-Vindo -->
+                    <!--Começo Funcionalidades -->
+                    <div id="funcionalidades" class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Funcionalidades</h6>
+                        </div>
+                        <div class="card-body text-lg">
+                            <p>*Breve tutorial sobre o site*</p>
+                            <p class="mb-0"></p>
+                        </div>
+                    </div>
+                    <!--Fim Funcionalidades-->
+                    <!--Começo Sobre Nós -->
+                    <div id="sobre" class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Sobre Nós</h6>
+                        </div>
+                        <div class="card-body text-lg">
+                            <p>Antes da criação do site, a equipe da DNHR estaria alicerçada em uma visão. Em 2018,
+                                nós ingressávamos no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo,
+                                Câmpus São João da Boa Vista.<br>
+                                Ao decorrer de 4 anos, nos dedicamos a estudar o mundo
+                                da tecnologia e inovação, com o objetivo de nos tornarmos técnicos na área.<br>
+                                Graças ao esforço e dedicação dos colegas e professores, dos quais somos eterna
+                                mente gratos, chegamos na etapa final: a consolidação do aprendizado adquirido
+                                materializado em um projeto.<br>
+                                O objetivo é claro: disponibilizar um site utilirário de qualidade na área de
+                                finanças, contribuindo, assim, para o desenvolvimento econômico do usuário ao mesmo
+                                tempo que podemos colocar nosso aprendizado à prova</p>
+                        </div>
+                    </div>
+                    <!--Fim Sobre Nós-->
+                    <div class="h5 mb-0 font-weight-bold  text-center">
                         <a href="#"  class="btn btn-success mb-2">Cadastre-se</a> <!-- link do cadastro -->
                     </div>
+                    <!--Começo Duvidas Frequentes -->
+                    <div id="duvidas" class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Dúvidas Frequentes</h6>
+                        </div>
+                        <div class="card-body text-lg">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#d1" class="d-block card-header py-3" data-toggle="collapse"
+                                   role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-success text-center">O DNHR vende ou compartilha dados
+                                        financeiros para terceiros?</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse animated--grow-in" id="d1">
+                                    <div class="card-body">
+                                        Não. Nosso site é um projeto sem fins lucraticos. Nosso único objetivo que é levar
+                                        organização financeira às pessoas.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#d2" class="d-block card-header py-3" data-toggle="collapse"
+                                   role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-success text-center">Posso confiar meus
+                                        dados cadastrais ao DNHR?</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse animated--grow-in" id="d2">
+                                    <div class="card-body">
+                                        Sim. Fazemos uso de tecnologia para criptografia de senhas, garantindo a
+                                        segurança das informações do usuário
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#d3" class="d-block card-header py-3" data-toggle="collapse"
+                                   role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-success text-center">O DNHR pede por meus dados
+                                        bancários?</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse animated--grow-in" id="d3">
+                                    <div class="card-body">
+                                        Não. Todos os dados cadastrados são feitos manualmente pelo usuário.
+                                        Não requisitaremos dados como conta do banco, senha de cartão, extrato
+                                        bancário, etc.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Accordion -->
+                                <a href="#d4" class="d-block card-header py-3" data-toggle="collapse"
+                                   role="button" aria-expanded="true" aria-controls="collapseCardExample">
+                                    <h6 class="m-0 font-weight-bold text-success text-center">Tenho uma dúvida não
+                                        listada aqui, o que devo fazer?</h6>
+                                </a>
+                                <!-- Card Content - Collapse -->
+                                <div class="collapse animated--grow-in" id="d4">
+                                    <div class="card-body">
+                                        Nos envie um email no nosso endereço oficial para esclarecimentos diversos
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Fim Duvidas Frequentes -->
 
                 </div>
                 <!-- /.container-fluid -->
