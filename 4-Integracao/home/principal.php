@@ -38,7 +38,7 @@
 
 
                     <ul class="navbar-nav">
-                        <li class="dropdown no-arrow">
+                        <li class="dropdown no-arrow ">
                             <a class="nav-link dropdown-toggle" href="#">
                                 <img style="width: 60%;" class="img-fluid"
                                      src="../public/img/logo2.svg">
@@ -46,35 +46,35 @@
                         </li>
                     </ul>
 
-                    <div class="topbar-divider d-none d-sm-block"></div>
+                    <div class="topbar-divider d-none d-sm-block "></div>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Funcionalidades -->
                         <li class="nav-item dropdown no-arrow mx-1 ">
-                            <a class="nav-link dropdown-toggle" href="#funcionalidades">
-                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">Funcionalidades</span>
+                            <a class="nav-link dropdown-toggle " href="#funcionalidades">
+                                <span class="mr-2  d-lg-inline text-gray-900 small">Funcionalidades</span>
                             </a>
                         </li>
 
                         <!-- Nav Item - Sobre Nós -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#sobre"><!--link do "sobre nós"-->
-                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">Sobre Nós</span>
+                                <span style="page-break-inside: " class="mr-2 d-lg-inline text-gray-900 small">Sobre Nós</span>
                             </a>
                         </li>
                         <!-- Nav Item - Dúvidas Frequentes -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1 ">
                             <a class="nav-link dropdown-toggle" href="#duvidas" ><!--link do "Dúvidas Frequentes"-->
-                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">Dúvidas Frequentes</span>
+                                <span class="mr-2 d-lg-inline text-gray-900 small">Dúvidas Frequentes</span>
                             </a>
                         </li>
 
                         <!-- Nav Item - Iniciar Sessão -->
                         <li class="nav-item dropdown no-arrow mx-1  <?php //if(usuario==logado) { echo"invisible";} ?>">
                             <a class="nav-link dropdown-toggle" href="#" ><!--link do cadastro-->
-                                <span class="mr-2 d-none d-lg-inline text-gray-900 small">Iniciar Sessão</span>
+                                <span class="mr-2  d-lg-inline text-gray-900 small">Iniciar Sessão</span>
                             </a>
                         </li>
                         <!-- Nav Item - Logout-->
@@ -102,8 +102,8 @@
                                 de navegar pelo site da DNHR.</p>
 
                             <p class="mb-0"> A nossa ideia é  oferecer um site com um design criado
-                                com <span class="text-success font-weight-bold"> design agradável,eficiente,
-                                    moderno</span> e, possibilitando uma incrível experiência
+                                com <span class="text-success font-weight-bold"> design agradável,eficiente e
+                                    moderno</span>, possibilitando uma incrível experiência
                                 para o <span class="text-success font-weight-bold">usuário.</span></p>
                         </div>
                     </div>
@@ -111,11 +111,44 @@
                     <!--Começo Funcionalidades -->
                     <div id="funcionalidades" class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Funcionalidades</h6>
+                            <h6 class="h3 mb=4 font-weight-bold text-success text-center">Passo A Passo</h6>
                         </div>
-                        <div class="card-body text-lg">
-                            <p>*Breve tutorial sobre o site*</p>
-                            <p class="mb-0"></p>
+                        <div class="card-body text-center">
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <a href="#"  class="btn btn-success mb-2">Cadastre-se</a>
+
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <p>Faça o <a class="text-success font-weight-bold " href="#">login</a></p>
+
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <p>Crie sua Carteira preenchendo os campos</p>
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <p>Crie categorias, organizando as transações por suas características</p>
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <p>Cadastre transações<br> Para valores negativos, utilize o sinal "-" antes de inserir
+                                o valor</p>
+                            <div class="text-center">
+                                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                     src="../public/img/logo2.svg" alt="...">
+                            </div>
+                            <p>Utilize a opção Planejamento caso queira fazer simulações sem alterar suas transações
+                                cadastradas</p>
+
                         </div>
                     </div>
                     <!--Fim Funcionalidades-->
@@ -127,13 +160,13 @@
                         <div class="card-body text-lg">
                             <p>Antes da criação do site, a equipe da DNHR estaria alicerçada em uma visão. Em 2018,
                                 nós ingressávamos no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo,
-                                Câmpus São João da Boa Vista.<br>
-                                Ao decorrer de 4 anos, nos dedicamos a estudar o mundo
-                                da tecnologia e inovação, com o objetivo de nos tornarmos técnicos na área.<br>
-                                Graças ao esforço e dedicação dos colegas e professores, dos quais somos eterna
+                                Câmpus São João da Boa Vista.</p>
+                            <p class="mb-1">Ao decorrer de 4 anos, nos dedicamos a estudar o mundo
+                                da tecnologia e inovação, com o objetivo de nos tornarmos técnicos na área.</p>
+                            <p class="mb-1">Graças ao esforço e dedicação dos colegas e professores, dos quais somos eterna
                                 mente gratos, chegamos na etapa final: a consolidação do aprendizado adquirido
-                                materializado em um projeto.<br>
-                                O objetivo é claro: disponibilizar um site utilirário de qualidade na área de
+                                materializado em um projeto.</p>
+                            <p class="mb-1">O objetivo é claro: disponibilizar um site utilirário de qualidade na área de
                                 finanças, contribuindo, assim, para o desenvolvimento econômico do usuário ao mesmo
                                 tempo que podemos colocar nosso aprendizado à prova</p>
                         </div>
@@ -173,7 +206,7 @@
                                 <!-- Card Content - Collapse -->
                                 <div class="collapse animated--grow-in" id="d2">
                                     <div class="card-body">
-                                        Sim. Fazemos uso de tecnologia para criptografia de senhas, garantindo a
+                                        Fazemos uso de tecnologia para criptografia de senhas, garantindo a
                                         segurança das informações do usuário
                                     </div>
                                 </div>
@@ -262,6 +295,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="../public/vendor/jquery/jquery.min.js"></script>
     <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
     <!-- Core plugin JavaScript-->
     <script src="../public/vendor/jquery-easing/jquery.easing.min.js"></script>
